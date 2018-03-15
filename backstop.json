@@ -1,0 +1,46 @@
+{
+    "id": "backstop_default",
+    "viewports": [
+        {
+            "label": "mobile",
+            "width": 750,
+            "height": 1334
+        }
+    ],
+    "paths": {
+        "bitmaps_reference": "backstop_data/bitmaps_reference",
+        "bitmaps_test": "backstop_data/bitmaps_test",
+        "engine_scripts": "backstop_data/engine_scripts",
+        "html_report": "backstop_data/html_report",
+        "ci_report": "backstop_data/ci_report"
+    },
+    "report": ["browser"],
+    "engine": "chrome",
+    "removeSelectors": [".LoaderOverlay"],
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debugWindow": false,
+    "fileNameTemplate": "{scenarioLabel}",
+    "scenarios": [
+        {
+            "label": "Topshop Mobile Top Navigation Bar",
+            "url": "http://local.m.topshop.com:8080/",
+            "referenceUrl": "https://m.topshop.com/",
+            "selectors": [".Header"],
+            "selectorExpansion": false,
+            "requireSameDimensions": true,
+            "misMatchThreshold": 1
+        },
+        {
+            "label": "Topshop PDP",
+            "url":
+                "http://local.m.topshop.com:8080/en/tsuk/product/gizzelle-court-shoes-7367663",
+            "selectors": [".Main-inner"],
+            "readySelector": ".ProductDetail-cmsContent",
+            "onReadyScript": "chromy/PDP.js",
+            "selectorExpansion": false,
+            "requireSameDimensions": true,
+            "misMatchThreshold": 0.5
+        }
+    ]
+}
