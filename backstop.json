@@ -16,10 +16,13 @@
     },
     "report": ["browser"],
     "engine": "chrome",
+    "engineOptions": {
+        "chromeFlags": ["--proxy-server=http://0.0.0.0:3044"]
+    },
     "removeSelectors": [".LoaderOverlay"],
     "asyncCaptureLimit": 5,
     "asyncCompareLimit": 50,
-    "debugWindow": false,
+    "debugWindow": true,
     "fileNameTemplate": "{scenarioLabel}",
     "scenarios": [
         {
