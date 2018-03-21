@@ -1,10 +1,10 @@
 const path = require("path")
 const assert = require("assert")
 
-const pdp = require("./proxy_server/fixed_responses/pdp.json")
+const pdp = require("./../proxy_server/fixed_responses/pdp.json")
 
-describe("Take screenshots", () => {
-    it("Screenshot PDP", () => {
+describe("Mobile screenshots", () => {
+    it("PDP", () => {
         browser.setViewportSize({
             width: 500,
             height: 1080,
@@ -22,7 +22,7 @@ describe("Take screenshots", () => {
             })
         )
         browser.saveViewportScreenshot(
-            path.join(__dirname, `./screenshots/${Date.now()}.jpg`)
+            path.join(__dirname, `./../screenshots/${Date.now()}.jpg`)
         )
     })
 })
